@@ -8,8 +8,20 @@ $surfaceprop "metal"
 $model "Body" "stacatto_black1"
 $sequence idle "stacatto_black1_idle" loop fps 1 ACT_BB_SWORD_IDLE -1
 $sequence idle_sheathed "stacatto_black1_retracted_idle" loop fps 1 ACT_BB_SWORD_IDLE_SHEATHED -1
-$sequence sheathe "stacatto_black1_retract" fps 15 ACT_BB_SWORD_SHEATHE 1
-$sequence unsheathe "stacatto_black1_deploy" fps 15 ACT_BB_SWORD_UNSHEATHE 1
+$sequence sheathe "stacatto_black1_retract" {
+fps 15 
+ACT_BB_SWORD_SHEATHE 1
+{ event AE_CL_PLAYSOUND               0     "Weapon_Blade.Retract"} 
+}  
+
+$sequence unsheathe "stacatto_black1_deploy" {
+fps 15 
+ACT_BB_SWORD_UNSHEATHE 1
+{ event AE_CL_PLAYSOUND               0     "Weapon_Blade.Deploy"} 
+}  
+
+
+
 
 
 
